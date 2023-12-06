@@ -6,7 +6,6 @@ import mockupThree from "./Mockup3.png";
 import mockupFour from "./mockup4.png";
 import Image from "next/image";
 import Link from "next/link";
-import drug1 from "./drug.gif"
 function App() {
   let GoToAppLink = () => {
     window.open(
