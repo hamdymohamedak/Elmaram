@@ -1,95 +1,59 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-
-export default function Home() {
+"use client";
+import styles from "./page.module.css";
+import mockupOne from "./Mockup.png";
+import mockupTwo from "./Mockup2.png";
+import mockupThree from "./Mockup3.png";
+import mockupFour from "./mockup4.png";
+import Image from "next/image";
+import Link from "next/link";
+import drug1 from "./drug.gif"
+function App() {
+  let GoToAppLink = () => {
+    window.open(
+      "https://www.mediafire.com/file/is20umuoxclw2hz/Elmaram.apk/file"
+    );
+  };
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className={styles.App}>
+      <div className={styles.context}>
+        <div id={styles.title} className={styles.title}>
+          AlMaram Pharmacies
+          <h2 className={styles.titleChild}>
+            Created by: <span>Askander</span>
+          </h2>
+        </div>
+        <div className={styles.btns}>
+          <button onClick={GoToAppLink}>Download Maram App</button>
+          <Link className="button" href={"/components/orders"}>Orders</Link>
+        </div>
+        <div className={styles.des}>
+          التطبيق غير متواجد علي متجر بلاي لذلك عندما تقوم بتثبيته سيخبرك انه من
+          مصدر مجهول اضغط علي زر تثبيت علي اي حال التطبيق
+        </div>
+        <div className={styles.mockupsCards}>
+          <Image src={mockupOne} />
+          <Image src={mockupTwo} />
+          <Image src={mockupThree} />
+          <Image src={mockupFour} />
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className={styles.area}>
+        <ul className={styles.circles}>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </div>
+  );
 }
+
+export default App;
