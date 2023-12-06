@@ -80,7 +80,7 @@ export default function Page() {
         <form className={styles.form}>
           <p className={styles.title}>Order...</p>
           <p dir="rtl" className={styles.message}>
-            78 تقاطع ممتاز باشا مع ملك حفني محطه فيكتوريا برح الشباب
+            78 تقاطع ممتاز باشا مع ملك حفني محطه فيكتوريا برج الشباب
           </p>
           <label>
             <input
