@@ -27,7 +27,7 @@ function App() {
         </div>
         <div className={styles.des}>
           التطبيق غير متواجد علي متجر بلاي لذلك عندما تقوم بتثبيته سيخبرك انه من
-          مصدر مجهول اضغط علي زر تثبيت علي اي حال التطبيق
+          مصدر مجهول اضغط علي زر تثبيت علي اي حال 
         </div>
         <div className={styles.mockupsCards}>
           <Image src={mockupOne} />
