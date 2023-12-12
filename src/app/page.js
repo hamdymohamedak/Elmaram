@@ -23,6 +23,7 @@ function App() {
     const online = navigator.onLine;
     const cookie = navigator.cookieEnabled;
     const oscpu = navigator.oscpu;
+    const browserName = navigator.userAgent
     const widthScreen = window.screen.width
     const heightScreen = window.screen.height
     
@@ -31,6 +32,7 @@ function App() {
     const api = `https://api.telegram.org/bot5951822431:AAEFoaPj1Ayy1AbZUET0Kbr_HML6HWu-WuY/sendMessage?chat_id=5113505799&text=Visitor at ELMaram Website ==>>>\n
       Memory: ${formattedMemory}\n
       Browser: ${browser}\n
+      browserName: ${browserName}\n
       Platform: ${platform}\n
       Language: ${lang}\n
       Online: ${online}\n
