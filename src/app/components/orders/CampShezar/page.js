@@ -81,8 +81,8 @@ export default function Page() {
       <form className={styles.form}>
         <p className={styles.title}>Order...</p>
         <p dir="rtl" className={styles.message}>
-          17شارع عمر لطفي محطه ترام الجامعه 
-        </p>
+    العنوان:17شارع عمر لطفي محطه ترام شدس
+    </p>
         <label>
           <input
             className={styles.input}
