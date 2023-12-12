@@ -81,7 +81,7 @@ export default function Page() {
       <form className={styles.form}>
         <p className={styles.title}>Order...</p>
         <p dir="rtl" className={styles.message}>
-          شارع عثمان احمد عثمان بيت العز
+          78 تقاطع ممتاز باشا مع ملك حفني محطه فيكتوريا برح الشباب
         </p>
         <label>
           <input

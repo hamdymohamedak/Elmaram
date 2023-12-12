@@ -84,7 +84,7 @@ export default function Page() {
       <form className={styles.form}>
         <p className={styles.title}>Order...</p>
         <p dir="rtl" className={styles.message}>
-           212شارع الفتح امام محطه ترام شدس
+          78 تقاطع ممتاز باشا مع ملك حفني محطه فيكتوريا برح الشباب
         </p>
         <label>
           <input
