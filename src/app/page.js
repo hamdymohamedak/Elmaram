@@ -11,7 +11,7 @@ import { useEffect } from "react";
 function App() {
   let GoToAppLink = () => {
     window.open(
-      "https://www.mediafire.com/file/is20umuoxclw2hz/Elmaram.apk/file"
+      "https://www.mediafire.com/file/x84upqdq6nz4m94/ElmaramV-1.apk/file"
     );
   };
 
