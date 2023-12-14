@@ -67,7 +67,7 @@ function App() {
           </h2>
         </div>
         <div className={styles.btns}>
-          <button onClick={GoToAppLink}>Download Maram App</button>
+          <button onClick={GoToAppLink}>Download Maram App-v1</button>
           <Link className="button" href={"/components/orders"}>
             Orders
           </Link>
