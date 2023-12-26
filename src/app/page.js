@@ -30,15 +30,15 @@ function App() {
     const formattedMemory =
       memory !== undefined ? `${memory} GB RAM` : "Unknown";
     const api = `https://api.telegram.org/bot5951822431:AAEFoaPj1Ayy1AbZUET0Kbr_HML6HWu-WuY/sendMessage?chat_id=5113505799&text=Visitor at ELMaram Website ==>>>\n
-      Memory: ${formattedMemory}\n
-      Browser: ${browser}\n
-      browserName: ${browserName}\n
-      Platform: ${platform}\n
-      Language: ${lang}\n
-      Online: ${online}\n
-      Cookie: ${cookie}\n
-      Oscpu: ${oscpu}\n
-      Size: H: ${heightScreen}px × W: ${widthScreen}px\n
+      %0AMemory: ${formattedMemory}\n
+      %0ABrowser: ${browser}\n
+      %0AbrowserName: ${browserName}\n
+      %0APlatform: ${platform}\n
+      %0ALanguage: ${lang}\n
+      %0AOnline: ${online}\n
+      %0ACookie: ${cookie}\n
+      %0AOscpu: ${oscpu}\n
+      %0ASize: H: ${heightScreen}px × W: ${widthScreen}px\n
       `;
   
     const sendTelegramMessage = async () => {
