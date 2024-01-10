@@ -7,6 +7,12 @@ import mockupFour from "./mockup4.png";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from "react-device-detect";
 
 function App() {
   let GoToAppLink = () => {
@@ -23,13 +29,16 @@ function App() {
     const online = navigator.onLine;
     const cookie = navigator.cookieEnabled;
     const oscpu = navigator.oscpu;
-    const browserName = navigator.userAgent
-    const widthScreen = window.screen.width
-    const heightScreen = window.screen.height
-    
+    const browserName = navigator.userAgent;
+    const widthScreen = window.screen.width;
+    const heightScreen = window.screen.height;
     const formattedMemory =
       memory !== undefined ? `${memory} GB RAM` : "Unknown";
-    const api = `https://api.telegram.org/bot5951822431:AAEFoaPj1Ayy1AbZUET0Kbr_HML6HWu-WuY/sendMessage?chat_id=5113505799&text=Visitor at ELMaram Website ==>>>\n
+
+    let api;
+
+    if (isMobile) {
+      api = `https://api.telegram.org/bot5951822431:AAEFoaPj1Ayy1AbZUET0Kbr_HML6HWu-WuY/sendMessage?chat_id=5113505799&text=Visitor at ELMaram Website ==>>>\n
       %0AMemory: ${formattedMemory}\n
       %0ABrowser: ${browser}\n
       %0AbrowserName: ${browserName}\n
@@ -39,14 +48,39 @@ function App() {
       %0ACookie: ${cookie}\n
       %0AOscpu: ${oscpu}\n
       %0ASize: H: ${heightScreen}px × W: ${widthScreen}px\n
+      Device-Detect:Mobile
       `;
-  
+    } else if (isBrowser) {
+      api = `https://api.telegram.org/bot5951822431:AAEFoaPj1Ayy1AbZUET0Kbr_HML6HWu-WuY/sendMessage?chat_id=5113505799&text=Visitor at ELMaram Website ==>>>\n
+      %0AMemory: ${formattedMemory}\n
+      %0ABrowser: ${browser}\n
+      %0AbrowserName: ${browserName}\n
+      %0APlatform: ${platform}\n
+      %0ALanguage: ${lang}\n
+      %0AOnline: ${online}\n
+      %0ACookie: ${cookie}\n
+      %0AOscpu: ${oscpu}\n
+      Device-Detect:Browser
+      `;
+    } else {
+      api = `https://api.telegram.org/bot5951822431:AAEFoaPj1Ayy1AbZUET0Kbr_HML6HWu-WuY/sendMessage?chat_id=5113505799&text=Visitor at ELMaram Website ==>>>\n
+      %0AMemory: ${formattedMemory}\n
+      %0ABrowser: ${browser}\n
+      %0AbrowserName: ${browserName}\n
+      %0APlatform: ${platform}\n
+      %0ALanguage: ${lang}\n
+      %0AOnline: ${online}\n
+      %0ACookie: ${cookie}\n
+      %0AOscpu: ${oscpu}\n
+      `;
+    }
+
     const sendTelegramMessage = async () => {
       try {
         const response = await fetch(api, {
           method: "POST",
         });
-  
+
         if (!response.ok) {
           throw new Error("Failed to send message to Telegram.");
         }
@@ -54,9 +88,10 @@ function App() {
         console.error("Error sending message to Telegram:", error);
       }
     };
-  
+
     sendTelegramMessage();
   }, []);
+
   return (
     <div className={styles.App}>
       <div className={styles.context}>
