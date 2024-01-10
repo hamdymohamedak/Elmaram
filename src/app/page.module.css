@@ -1,5 +1,5 @@
 .App {
-  min-height: 100vh;
+  height: 100vh;
   gap: 0;
 }
 .context {
@@ -233,6 +233,9 @@
   }
   .btns {
     flex-direction: column;
+  }
+  .App{
+    overflow:hidden;
   }
 }
 @media (min-width: 426px) and (max-width: 768px) {
