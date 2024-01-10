@@ -237,6 +237,9 @@
   .App{
     overflow:hidden;
   }
+  #body{
+    overflow:hidden;
+  }
 }
 @media (min-width: 426px) and (max-width: 768px) {
   .html {
