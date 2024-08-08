@@ -9,9 +9,6 @@
   transition: 0.2s;
   outline: none;
 }
-*{
-  overflow: hidden;
-}
 @media (max-width: 425px) {
   .html {
     font-size: 11px;
